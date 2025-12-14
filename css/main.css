@@ -1,0 +1,69 @@
+@media screen and (max-width: 600px) {
+    * {
+        padding: 0;
+        margin: 0;
+        font-family: 'monospace', sans-serif;
+        background-color: black;
+        color: white;
+        overflow: hidden;
+    }
+
+    .main {
+        justify-self: center;
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    p {
+        font-size: 59%;
+        position: fixed;
+        top: 33%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        width: 90%;
+    }
+
+    .console {
+        display: flex;
+        flex-direction: row;
+        align-self: center;
+        position: fixed;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        width: 90%;
+    }
+
+    .main input {
+        background: transparent;
+        border: 1px solid white;
+        color: #27ff00;
+        font-size: 12px;
+        padding: 3px 10px;
+        border-radius: 8px;
+        width: 90%;
+    }
+
+    .main #code {
+        position: absolute;
+        top: 40%;
+        left: 5%;
+        width: 71.5%;
+        padding: 10.5px 10px;
+    }
+
+    #enter {
+        border: none;
+        background: transparent;
+    }
+
+    #enter:hover {
+        cursor: pointer;
+        border: none;
+        background: transparent;
+    }
+
+    #enter img {
+        width: 40%;
+    }
+}

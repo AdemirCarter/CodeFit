@@ -1,0 +1,74 @@
+@media screen and (max-width: 600px) {
+    .treinoMenu {
+        display: none;
+        background-color: black;
+    }
+
+    .treinoMenu h2 {
+        justify-self: center;
+        margin-top: 25px;
+    }
+
+    .treinoMenu #back {
+        background: transparent;
+        border: none;
+        position: absolute;
+        left: 20px;
+        top: 30px;
+    }
+
+    .treinoMenu #back img {
+        width: 30px;
+    }
+
+    .treinoMenu .treinos {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+        justify-self: center;
+        width: 80%;
+        height: 450px;
+        border: 1px solid rgba(255, 255, 255, 0.39);
+        border-radius: 10px;
+        padding: 10px;
+
+    }
+
+    .treinoMenu .treinos div {
+        font-size: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 5px;
+        align-items: center;
+    }
+
+    .treinoMenu .treinos div input {
+        width: 30px;
+        border: 1px solid rgba(0, 255, 0, 0.34);
+        border-radius: 8px;
+        color: #00ff00;
+        padding: 0 3px;
+        text-align: center;
+    }
+
+    .treinoMenu #salvar {
+        border: 1px solid rgba(255, 255, 255, 0.43);
+        padding: 5px 30px;
+        border-radius: 10px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 10px;
+        transition: .2s;
+    }
+
+    .treinoMenu #salvar:hover {
+        color: #27ff00;
+        border: 1px solid #27ff00;
+        cursor: pointer;
+        left: 50%;
+        transform: translateX(-50%) rotate(5deg);
+    }
+}
