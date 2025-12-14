@@ -1,9 +1,11 @@
 {
   "Ademir": {
     "treinos": {
-      "A": ["Triceps Unilateral", "JM Press", "Elevação Lateral Sentado", "Elevação Frontal Polia"],
-      "B": ["Remada Baixa", "Rosca Punho Unilateral", "Remada Curvada Halter"],
-      "C": ["Panturrilha Hack"]
+      "A": ["Triceps Unilateral", "JM Press", "Elevação Lateral Polia", "Elevação Frontal Polia", "Supino Reto Livre", "Crucifixo Superior Polia"],
+      "B": ["Rosca Unilateral", "Rosca Bayesian", "Rosca Punho Unilateral", "Rosca Inversa Barra", "Puxada Unilateral", "Remada Curvada Halter", "Voador Inverso"],
+      "C": ["Panturrilha Hack", "Agachamento Hack", "Extensora", "Cadeira Adutora", "Mesa Flexora", "Stiff", "Elevação Pelvica"],
+      "D": ["Supino Reto Máquina", "Supino Inclinado Halter", "Polia Baixa", "Triceps Francês Corda", "Elevação Lateral Sentado", "Elevação Frontal Sentado"],
+      "E": ["Puxada Supinada", "Remada Baixa Supinada", "Remada Articulada", "Deltoide Posterior Polia", "Rosca W", "Rosca Martelo", "Rosca Punho Polia"]
     }
   }
 }
