@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Teste</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/treinoMenu.css">
+</head>
+<body>
+    <div class="main">
+        <h2>CodeFit</h2>
+        <p>Escolha seu treino abaixo utilizando o comando. Ex: /treino A.</p>
+        <input id="code" type="text" placeholder="Digite seu codigo de acesso">
+        <div class="console">
+            <input id="terminal" type="text" placeholder="/treino A, B, C...">
+            <button id="enter"><img src="https://img.icons8.com/?size=100&id=23352&format=png&color=ffffff"></button>
+        </div>
+    </div>
+
+    <div class="treinoMenu">
+        <button id="back"><img src="https://img.icons8.com/?size=100&id=357&format=png&color=ffffff"></button>
+
+        <h2>Treino</h2>
+
+        <div class="treinos">
+        </div>
+
+        <button id="salvar">Save</button>
+    </div>
+
+</body>
+
+<script> //Variaveis
+    const terminal = document.querySelector("#terminal");
+    const enter = document.querySelector("#enter");
+    const treinoMenu = document.querySelector(".treinoMenu");
+    const main = document.querySelector(".main");
+    const code = document.querySelector("#code");
+    const treinoDiv = document.querySelector(".treinos");
+    const back = document.querySelector("#back");
+    const salvar = document.querySelector("#salvar");
+
+</script>
+
+<script> //main
+
+fetch("datauser.json")
+    .then(res => res.json())
+    .then(data => {
+        enter.addEventListener("click", () => {
+            const args = terminal.value.trim().split(" ");
+
+            if (code.value in data && args.length === 2 && args[1] in data[code.value].treinos) {
+
+                localStorage.setItem("code", code.value)
+                treinoMenu.style.display = "block";
+                main.style.display = "none";
+                terminal.value = "";
+
+                data[code.value].treinos[args[1]].forEach(element => {
+                    const div = document.createElement("div");
+                    div.className = element.trim();
+
+                    const h3 = document.createElement("h3");
+                    h3.textContent = element;
+
+                    const divInput = document.createElement("div");
+                    div.appendChild(h3);
+                    div.appendChild(divInput);
+                    treinoDiv.appendChild(div);
+
+                    const inputInfo = ["sets", "reps", "peso"]
+
+                    inputInfo.forEach(input => {
+                        const inputin = document.createElement("input");
+                        inputin.placeholder = input;
+                        inputin.type = "number";
+                        inputin.id = `${input}-${element}`;
+                        inputin.value = localStorage.getItem(inputin.id)
+                        divInput.appendChild(inputin);
+                    })
+
+
+                })
+
+            } else {
+                alert("Nome incorreto ou comando inválido");
+            }
+
+        })
+    })
+
+</script>
+
+<script>
+
+    back.addEventListener("click", () => {
+        treinoMenu.style.display = "none";
+        main.style.display = "block";
+        treinoDiv.innerHTML = "";
+    })
+
+    salvar.addEventListener("click", () => {
+        const divs = treinoDiv.querySelectorAll("div");
+
+        for (let i of divs) {
+            const inputs = i.querySelectorAll("input");
+
+            for (let v of inputs) {
+                localStorage.setItem(v.id, v.value)
+            }
+        }
+
+        alert("Salvo com sucesso")
+    })
+</script>
+
+</html>
